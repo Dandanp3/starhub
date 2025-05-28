@@ -37,28 +37,33 @@ Você pode visualizar o projeto **StarHub** diretamente no meu portfólio:
    ```bash
    git clone https://github.com/seu-usuario/starhub.git
    ```
-2. Navegue até o diretório do projeto:([YouTube][3])
+2. Navegue até o diretório do projeto:
 
    ```bash
    cd starhub
    ```
-3. Crie e ative um ambiente virtual:([GitHub][4])
+3. Crie e ative um ambiente virtual:
 
    ```bash
    python -m venv venv
    source venv/bin/activate  # No Windows use: venv\Scripts\activate
    ```
-4. Instale as dependências:([about.gitlab.com][5])
+4. Instale as dependências:
 
    ```bash
    pip install -r requirements.txt
    ```
-5. Aplique as migrações:
+
+5. Certifique-se de estar na pasta do projeto
+   ```bash
+   cd projeto # aperte tab para completar
+   ```
+6. Aplique as migrações:
 
    ```bash
    python manage.py migrate
    ```
-6. Inicie o servidor de desenvolvimento:
+7. Inicie o servidor de desenvolvimento:
 
    ```bash
    python manage.py runserver

@@ -1,0 +1,136 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte e base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('/static/imgs/fundo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 140px; /* espaço abaixo do header fixo */
+  margin-bottom: 20px;
+  z-index: 10;
+  position: relative;
+}
+
+
+.logo img {
+  height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5));
+}
+
+/* Navegação */
+.navigation {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-button {
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+/* Conteúdo principal */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 410px; /* espaço por causa do header fixo */
+}
+
+.hero-section {
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 60px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 30px;
+  }
+
+  .navigation {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-section {
+    padding: 40px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}

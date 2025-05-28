@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarHub - Currículo</title>
+    <link rel="stylesheet" href="{% static 'styles/curriculo.css' %}">
+    <link rel="shortcut icon" href="{% static 'imgs/icon.png' %}" type="image/x-icon"/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Envio e Visualização de Currículo</h1>
+        </header>
+
+        <section class="upload-section">
+            <h2>Enviar Novo Currículo</h2>
+            <form action="{% url 'curriculo' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="arquivo" id="fileInput" accept=".pdf" required>
+                <button type="submit">Enviar</button>
+            </form>
+            {% if sucesso %}
+                <p class="success-message">Arquivo enviado com sucesso!</p>
+            {% endif %}
+        </section>
+
+        <section class="pdf-viewer">
+    <h2>Visualizar Último Currículo Enviado</h2>
+    
+    {% if curriculo %}
+        <div class="curriculo-item">
+            <p>Enviado em: {{ curriculo.data_envio|date:"d/m/Y H:i" }}</p>
+            <a href="{{ curriculo.arquivo.url }}" target="_blank" rel="noopener noreferrer" class="botao-curriculo">
+                Clique aqui para abrir seu currículo
+            </a>
+        </div>
+    {% else %}
+        <p>Nenhum currículo enviado ainda.</p>
+    {% endif %}
+</section>
+    </div>
+</body>
+
+</html>

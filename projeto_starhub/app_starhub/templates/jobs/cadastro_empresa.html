@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starhub/Cadastro Empresa</title>
+    <link rel="shortcut icon" href="{% static 'imgs/icon.png' %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'styles/cadastro_empresa.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{% static 'imgs/logo.png' %}" alt="Logo">
+    </div>
+
+    <div class="main-container">
+        <form method="post" class="forms">
+            {% csrf_token %}
+            <p class="titulo">Cadastro da Empresa</p>
+            
+            <!-- Exibir erro, se houver -->
+            {% if erro %}
+                <p class="erro" style="color: red; font-size: 14px;">{{ erro }}</p>
+            {% endif %}
+            
+            <label>
+                <input class="input" type="text" name="nome_empresa" placeholder="" required>
+                <span>Nome</span>
+            </label>
+
+            <label>
+                <input class="input" type="email" name="email_empresa" placeholder="" required>
+                <span>Email</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" name="local" placeholder="" required>
+                <span>Local</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" name="cpf" placeholder="" required>
+                <span>CPF</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" name="pais" placeholder="" required>
+                <span>País</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" name="estado" placeholder="" required>
+                <span>Estado</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" name="cidade" placeholder="" required>
+                <span>Cidade</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" name="endereco" placeholder="" required>
+                <span>Endereço</span>
+            </label>
+
+            <label>
+                <input class="input" type="password" name="senha_empresa" placeholder="" required>
+                <span>Senha</span>
+            </label>
+
+            <button type="submit" class="confirme">Confirmar</button>
+            <p class="login">Já tem uma conta? <a href="{% url 'login' %}">Login</a></p>
+        </form>
+    </div>
+</body>
+</html>

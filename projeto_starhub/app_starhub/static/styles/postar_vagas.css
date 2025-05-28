@@ -1,0 +1,164 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis de estilo */
+:root {
+  --primary-color: #6a0dad; /* Roxo escuro */
+  --secondary-color: #ffffff;
+  --background-color: #121212; /* Preto suave */
+  --text-color: #e0e0e0;
+  --input-border-color: #333333;
+  --input-focus-border-color: #6a0dad;
+  --button-background: #6a0dad;
+  --button-color: #ffffff;
+  --button-hover-background: #5a009d;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo geral */
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+.header {
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.logo img {
+  height: 50px;
+}
+
+.navigation {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Conteúdo principal */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* Seção do formulário */
+.form-section {
+  background-color: #1e1e1e; /* Tom mais claro que o fundo */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  width: 100%;
+}
+
+.form-section h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.form-description {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+/* Formulário */
+.job-form .form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.job-form label {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.job-form input,
+.job-form textarea {
+  padding: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #2c2c2c;
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+.job-form input:focus,
+.job-form textarea:focus {
+  border-color: var(--input-focus-border-color);
+  outline: none;
+}
+
+/* Botão de envio */
+.submit-button {
+  padding: 12px 24px;
+  background-color: var(--button-background);
+  color: var(--button-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--button-hover-background);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .navigation {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-section {
+    padding: 20px;
+  }
+}

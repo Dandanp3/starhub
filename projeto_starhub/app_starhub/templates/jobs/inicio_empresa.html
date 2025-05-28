@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StarHub Empresas – Conectando Você às Estrelas do Mercado</title>
+  <link rel="shortcut icon" href="{% static 'imgs/icon.png' %}" type="image/x-icon"/>
+  <link rel="stylesheet" href="{% static 'styles/inicio_empresa.css' %}">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="#">
+        <img src="{% static 'imgs/star.png' %}" alt="Logo StarHub" />
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="#" title="Notificações">
+        <img src="{% static 'imgs/sino.png' %}" alt="Notificações" />
+        <span>Notificações</span>
+      </a>
+      <a href="#" title="Acesse seu Perfil">
+        <img src="{% static 'imgs/conta.png' %}" alt="Perfil" />
+        <span>Perfil</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Encontre as Estrelas que Sua Empresa Precisa</h1>
+        <p>Na <strong>StarHub</strong>, conectamos sua empresa aos profissionais mais brilhantes do mercado. Descubra talentos prontos para impulsionar seus projetos.</p>
+        <a href="{% url 'postar_vagas' %}" class="btn">Postar Nova Vaga</a>
+      </div>
+      <div class="hero-image">
+        <img src="{% static 'imgs/colaborando.jpg' %}" alt="Equipe colaborando" />
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about-image">
+        <img src="{% static 'imgs/empresaCurriculo.jpg' %}" alt="Profissional analisando currículos" />
+      </div>
+      <div class="about-text">
+        <h2>Conectando Empresas a Talentos Excepcionais</h2>
+        <p>Na StarHub, acreditamos que cada profissional é uma estrela única, com brilho e potencial próprios. Nossa missão é facilitar o encontro entre empresas e esses talentos, promovendo conexões significativas e duradouras.</p>
+        <p>Com uma plataforma intuitiva e recursos inovadores, sua empresa pode encontrar os candidatos ideais de forma eficiente e eficaz.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-text">
+        <h2>Pronto para Descobrir Novos Talentos?</h2>
+        <p>Explore perfis de candidatos e encontre as estrelas que se alinham perfeitamente com os valores e objetivos da sua empresa.</p>
+        <a href="#" class="btn">Buscar Candidatos</a>
+      </div>
+      <div class="cta-image">
+        <img src="{% static 'imgs/entrevista.jpg' %}" alt="Entrevista de emprego" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 StarHub. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

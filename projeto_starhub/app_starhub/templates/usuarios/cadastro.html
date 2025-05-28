@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starhub/Cadastro</title>
+    <link rel="shortcut icon" href="{% static 'imgs/icon.png' %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'styles/cadastro.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{% static 'imgs/logo.png' %}" alt="Logo">
+    </div>
+
+    <div class="main-container">
+        <form method="post" class="forms" action="{% url 'listagem_usuarios' %}">
+            {% csrf_token %}
+            <p class="titulo">Cadastro</p>
+            
+            <!-- Exibir erro, se houver -->
+            {% if erro %}
+                <p class="erro" style="color: red; font-size: 14px;">{{ erro }}</p>
+            {% endif %}
+            
+            <div class="flex">
+                <label>
+                    <input class="input" type="text" name="nome" placeholder="" required>
+                    <span>Nome</span>
+                </label>
+
+                <label>
+                    <input class="input" type="text" name="sobrenome" placeholder="" required>
+                    <span>Sobrenome</span>
+                </label>
+            </div>  
+                    
+            <label>
+                <input class="input" type="email" name="email" placeholder="" required>
+                <span>Email</span>
+            </label> 
+            
+            <label>
+                <input class="input" type="password" name="senha" placeholder="" required>
+                <span>Senha</span>
+            </label>
+
+            <button type="submit" class="confirme">Confirmar</button>
+            <p class="login">Já tem uma conta? <a href="{% url 'login' %}">Login</a></p>
+        </form>
+    </div>
+</body>
+</html>

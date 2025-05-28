@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarHub – Conectando Estrelas ao Futuro</title>
+  <link rel="shortcut icon" href="{% static 'imgs/icon.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+</head>
+<body>
+  <header class="header">
+    <nav class="navigation">
+      <a href="{% url 'login' %}" class="nav-button">Entrar</a>
+      <a href="{% url 'cadastro' %}" class="nav-button">Cadastrar</a>
+      <a href="{% url 'cadastro_empresa' %}" class="nav-button">Cadastrar como Empresa</a>
+    </nav>
+  </header>
+    <div class="logo">
+      <img src="{% static 'imgs/logo.png' %}" alt="Logo StarHub">
+    </div>
+
+  <main class="main-content">
+    <section class="hero-section">
+      <div class="hero-text">
+        <h1>Transforme seu potencial em luz própria</h1>
+        <p>Conquiste seu universo profissional com a StarHub, a plataforma que conecta talentos a oportunidades brilhantes.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

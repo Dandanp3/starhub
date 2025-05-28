@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StarHub – Conectando Estrelas ao Futuro</title>
+  <link rel="shortcut icon" href="{% static 'imgs/icon.png' %}" type="image/x-icon"/>
+  <link rel="stylesheet" href="{% static 'styles/inicio.css' %}">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="/">
+        <img src="{% static 'imgs/star.png' %}" alt="Logo StarHub" />
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="{% url 'curriculo' %}" title="Acesse seu Currículo">
+        <img src="{% static 'imgs/maleta.png' %}" alt="Currículo" />
+        <span>Currículo</span>
+      </a>
+      <a href="#" title="Notificações">
+        <img src="{% static 'imgs/sino.png' %}" alt="Notificações" />
+        <span>Notificações</span>
+      </a>
+      <a href="{% url 'perfil' %}" title="Acesse seu Perfil">
+        <img src="{% static 'imgs/conta.png' %}" alt="Perfil" />
+        <span>Perfil</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Bem-vindo à <strong>StarHub</strong></h1>
+        <p>Descubra oportunidades que brilham tanto quanto você. Aqui, cada talento é uma estrela pronta para alcançar seu potencial máximo.</p>
+      </div>
+      <div class="hero-image">
+        <img src="{% static 'imgs/Nova.png' %}" alt="Profissionais caminhando" />
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <img src="{% static 'imgs/call.png' %}" alt="Chamados" />
+        <h2>Chamados</h2>
+        <p>Empresas estão à procura de talentos como você. Veja quem quer te conhecer.</p>
+      </div>
+      <div class="feature">
+        <img src="{% static 'imgs/oportunity.png' %}" alt="Novas Oportunidades" />
+        <h2>Novas Oportunidades</h2>
+        <p>Fique por dentro das últimas vagas do mercado e encontre a que combina com você.</p>
+      </div>
+      <div class="feature">
+        <a href="{% url 'vagas' %}" style='text-decoration: none;'>
+          <img src="{% static 'imgs/vacanancy.png' %}" alt="Meus Interesses" />
+          <h2>Meus Interesses</h2>
+          <p>Acompanhe as vagas que despertaram seu interesse e mantenha-se atualizado.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about-image">
+        <img src="{% static 'imgs/Interesses.png' %}" alt="Profissional digitando" />
+      </div>
+      <div class="about-text">
+        <h2>Sobre a StarHub</h2>
+        <p>Na StarHub, acreditamos que cada profissional é uma estrela única, com brilho e potencial próprios. Nossa missão é conectar esses talentos a oportunidades que os façam alcançar novos patamares em suas carreiras.</p>
+        <p>Com uma plataforma intuitiva e recursos inovadores, facilitamos o encontro entre empresas e candidatos, promovendo conexões significativas e duradouras.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-text">
+        <h2>Pronto para brilhar ainda mais?</h2>
+        <p>Explore novas oportunidades e avance em sua jornada profissional com a StarHub.</p>
+        <a href="{% url 'vagas' %}" class="btn">Ver Vagas</a>
+      </div>
+      <div class="cta-image">
+        <img src="{% static 'imgs/Chamado.png' %}" alt="Profissionais conversando" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 StarHub. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

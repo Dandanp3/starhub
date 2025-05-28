@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ vaga.titulo }} - Detalhes</title>
+    <link rel="stylesheet" href="{% static 'styles/detalhe_vagas.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ vaga.titulo }}</h1>
+        <p><strong>Empresa:</strong> {{ vaga.empresa.nome_empresa }}</p>
+        <p><strong>Local:</strong> {{ vaga.local }}</p>
+        <p><strong>Bolsa:</strong> R$ {{ vaga.bolsa }}</p>
+        <p><strong>Horário:</strong> {{ vaga.horario }}</p>
+    </header>
+
+    <section>
+        <h2>Descrição da Vaga</h2>
+        <p>{{ vaga.descricao }}</p>
+    </section>
+
+    <section>
+        <a href="#" class="button">Candidatar-se</a>
+    </section>
+
+    <footer>
+        <a href="{% url 'vagas' %}">← Voltar para a lista de vagas</a>
+    </footer>
+</body>
+</html>

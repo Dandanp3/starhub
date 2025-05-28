@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starhub</title>
+    <link rel="shortcut icon" href="{% static 'imgs/icon.png' %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'styles/interesse.css' %}">
+</head>
+<body>
+    <header>
+        <div class="item 1">
+            <img src="{% static 'imgs/star.png' %}" alt="">
+            <a href="{% url 'curriculo' %}"><img src="{% static 'imgs/maleta.png' %}" alt=""></a>
+        </div>
+        <div class="item 2">
+            <img src="{% static 'imgs/sino.png' %}" alt="">
+            <a href="{% url 'perfil' %}"><img src="{% static 'imgs/conta.png' %}" alt=""></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="vaga-estagio">
+            <h2>Vaga de Estágio - Desenvolvimento Web</h2>
+            <p>Estamos buscando um(a) estagiário(a) apaixonado(a) por tecnologia para integrar nossa equipe de desenvolvimento. 
+            Ótima oportunidade para aprender e crescer em um ambiente inovador.</p>
+            <ul>
+                <li>Bolsa: R$ 1.200,00</li>
+                <li>Horário: 6h diárias</li>
+                <li>Local: Híbrido - Recife/Pe</li>
+            </ul>
+            
+            <button>Você se Candidatou para essa Vaga</button>
+        </section>
+    </main>
+</body>
+</html>

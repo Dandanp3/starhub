@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starhub/Login</title>
+    <link rel="shortcut icon" href="{% static 'imgs/icon.png' %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{% static 'imgs/logo.png' %}" alt="Logo">
+    </div>
+    <div class="main-container">
+        <form class="forms" id="loginForm" method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <p class="titulo">Login</p>            
+    <label>
+        <input class="input" type="email" id="email" name="email" placeholder="" required>
+        <span>Email</span>
+    </label> 
+    <label>
+        <input class="input" type="password" id="senha" name="senha" placeholder="" required>
+        <span>Senha</span>
+    </label>
+    <button type="submit" class="confirme">Entrar</button> <!-- Botão submit -->
+    <p class="cadastro">Não tem uma conta? <a href="{% url 'cadastro' %}">Cadastre-se!</a></p>
+
+    {% if erro %}
+        <p style="color: red;">{{ erro }}</p>
+    {% endif %}
+</form>
+
+    </div>
+</body>
+</html>

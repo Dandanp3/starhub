@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Postar Vaga – StarHub</title>
+  <link rel="stylesheet" href="{% static 'styles/postar_vagas.css' %}" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="{% static 'imgs/logo.png' %}" alt="Logo StarHub" />
+    </div>
+    <nav class="navigation">
+      <a href="{% url 'inicio_empresa' %}" class="nav-button">Início</a>
+      <a href="#" class="nav-button">Perfil da Empresa</a>
+      <a href="#" class="nav-button">Sair</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section class="form-section">
+      <h1>Postar Nova Vaga</h1>
+      <p class="form-description">
+        Preencha os campos abaixo para cadastrar uma nova vaga. Certifique-se de que todas as informações estejam corretas e em conformidade com as leis de privacidade e uso da plataforma.
+      </p>
+
+      <form method="POST" action="{% url 'postar_vagas' %}" class="job-form">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="titulo">Título da Vaga</label>
+          <input type="text" id="titulo" name="titulo" required />
+        </div>
+
+        <div class="form-group">
+          <label for="horario">Horário de Trabalho</label>
+          <input type="time" id="horario" name="horario" required />
+        </div>
+
+        <div class="form-group">
+          <label for="bolsa">Bolsa (Salário + Benefícios)</label>
+          <input type="number" id="bolsa" name="bolsa" step="0.01" required />
+        </div>
+
+        <div class="form-group">
+          <label for="local">Local de Trabalho</label>
+          <input type="text" id="local" name="local" required />
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição da Vaga</label>
+          <textarea id="descricao" name="descricao" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="submit-button">Publicar Vaga</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,173 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f0a1d;
+  color: #dcd6f7;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Oculta as barras de rolagem */
+}
+
+.container {
+  background-color: #1a1336;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(128, 0, 128, 0.7);
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 380px;
+  box-sizing: border-box;
+  overflow: hidden; /* Garante que não haja barras de rolagem internas */
+}
+
+form#profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.preview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.image-upload {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 10px #800080cc;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.image-upload:hover {
+  box-shadow: 0 0 20px #b19cd9cc;
+}
+
+.image-upload img#preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.image-upload input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: inline-block;
+  color: #d6cfff;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 1.5px solid #4b2c6f;
+  background-color: #2e1e57;
+  color: #eee;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+input[readonly] {
+  background-color: #1a1336;
+  color: #a79bd9;
+  cursor: not-allowed;
+}
+
+a.botao-curriculo {
+  display: inline-block;
+  background-color: #6c44d9;
+  color: white;
+  text-decoration: none; 
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 0 8px #9e75f1;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+a.botao-curriculo:hover {
+  background-color: #844fee;
+  box-shadow: 0 0 12px #bfa3ff;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #a577f1;
+  box-shadow: 0 0 8px #a577f1aa;
+  background-color: #3c2a7e;
+}
+
+textarea {
+  min-height: 70px;
+}
+
+button[type="submit"] {
+  background-color: #6c44d9;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 8px #9e75f1;
+}
+
+button[type="submit"]:hover {
+  background-color: #844fee;
+  box-shadow: 0 0 12px #bfa3ff;
+}
+
+.logout {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button.out {
+  background-color: #3a1e5f;
+  color: #bda7ff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 0 6px #744ed9;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.out:hover {
+  background-color: #5b3fb3;
+  color: #e2dbff;
+}

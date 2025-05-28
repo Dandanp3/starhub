@@ -22,7 +22,7 @@
 * **Linguagem de Programação:** Python
 * **Framework Web:** Django
 * **Banco de Dados:** SQLite3
-* **Frontend:** HTML5, CSS3([Wikipédia][1], [GitHub][2])
+* **Frontend:** HTML5, CSS3
 
 ## 🌐 Demonstração Online
 
